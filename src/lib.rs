@@ -1,11 +1,11 @@
-pub mod paillier;
+pub mod keygen;
 pub mod arithmetic {
     pub mod inv;
 }
 
 #[cfg(test)]
 mod tests {
-    use super::paillier::key_gen;
+    use super::keygen::key_gen;
     use num_traits::Zero;
     use std::time::Instant;
 
