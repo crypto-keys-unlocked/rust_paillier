@@ -1,4 +1,4 @@
-# Rust Paillier Cryptosystem Implementation
+# rust_paillier (Paillier Cryptosystem Implementation in Rust)
 
 ## Overview
 This project is a Rust implementation of the Paillier cryptosystem, a probabilistic asymmetric algorithm for public key cryptography. The Paillier cryptosystem is known for its homomorphic properties, which allow for computations on ciphertexts that, when decrypted, match the result of operations as if they were carried out on the plaintexts.
@@ -6,8 +6,10 @@ This project is a Rust implementation of the Paillier cryptosystem, a probabilis
 The implementation aims to leverage Rust's strong type system and memory safety features to provide a secure and efficient library for cryptographic operations.
 
 ## Features
-- **Encryption & Decryption**: Message can be encrypted using public key. And ciphertext can be decrypted using the private key. 
-- **Homomorphic Encryption**: Utilizing the additive homomorphic properties of the Paillier cryptosystem to perform secure computations on encrypted data.
+- **Key Generation**: Secure generation of public and private keys for encryption and decryption.
+- **Encryption & Decryption**: Enables encryption of messages with a public key and decryption with a corresponding private key.
+- **Homomorphic Properties**: Supports operations on encrypted data, such as addition of ciphertexts and multiplication of ciphertexts by plaintext numbers, aligning results with operations performed on plaintext.
+- **Modular Arithmetic Support**: Includes utilities for modular inversion and other arithmetic operations necessary for the cryptosystem.
 
 ## Dependencies
 This project relies on several Rust crates for handling large integer arithmetic and random number generation:
@@ -42,6 +44,28 @@ cargo build --release
 ```
 This will compile the project and create an executable in the target/release directory.
 
+
+### Example Usage
+This example demonstrates key generation, encryption of a plaintext message, and decryption of the ciphertext:
+
+```rust
+use rust_paillier::keygen::key_gen;
+use rust_paillier::encryption::encryption;
+use rust_paillier::decryption::decryption;
+use num_bigint::BigUint;
+
+fn main() {
+    let bit_size = 512;
+    let (public_key, private_key) = key_gen(bit_size);
+
+    let message = BigUint::from(123u32);
+    let ciphertext = encryption(message.clone(), &public_key);
+    let decrypted_message = decryption(ciphertext, &public_key, &private_key);
+
+    assert_eq!(message, decrypted_message);
+    println!("Encryption and decryption successful!");
+}
+```
 
 ## Documentation
 For more details on the Paillier cryptosystem and its homomorphic properties, you can refer to the original paper: [Paillier (1999)](https://link.springer.com/content/pdf/10.1007%2F3-540-48910-X_16.pdf).
