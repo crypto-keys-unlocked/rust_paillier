@@ -1,6 +1,6 @@
 [package]
 name = "safe_paillier_rust"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 authors = ["Debrup Chatterjee <debrupc3@gmail.com>"]
 description = "An implementation of the Paillier cryptosystem with homomorphic properties, leveraging Rust's type system and safety guarantees."

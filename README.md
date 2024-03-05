@@ -30,7 +30,7 @@ To use `safe_paillier_rust` in your Rust project, add it as a dependency in your
 
 ```toml
 [dependencies]
-safe_paillier_rust = "0.1.0"
+safe_paillier_rust = "0.1.4"
 ```
 
 Make sure to use the latest version of `safe_paillier_rust` available on [crates.io](https://crates.io/crates/safe_paillier_rust).
