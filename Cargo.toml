@@ -2,9 +2,15 @@
 name = "rust_paillier"
 version = "0.1.0"
 edition = "2021"
+authors = ["Debrup Chatterjee <debrupc3@gmail.com>"]
+description = "An implementation of the Paillier cryptosystem with homomorphic properties, leveraging Rust's type system and safety guarantees."
+license = "MIT"
+repository = "https://github.com/crypto-keys-unlocked/rust_paillier/"
+documentation = "https://docs.rs/rust_paillier"
+keywords = ["cryptography", "paillier", "homomorphic", "encryption", "security"]
+categories = ["cryptography", "algorithms"]
 
 [dependencies]
-
 num-bigint = "0.4"
 num-prime = "0.4.3"
 rand = "0.8"

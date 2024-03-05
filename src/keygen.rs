@@ -151,16 +151,6 @@ pub fn mue(phi: BigUint, n: BigUint) -> BigUint {
 /// ## Returns
 ///
 /// A tuple containing the public and private keys `(public_key, private_key)`.
-///
-/// # Examples
-///
-/// ```
-/// use num_bigint::BigUint;
-/// use rust_pallier::paillier::{key_gen, PublicKey, PrivateKey};
-///
-/// // Generate a key pair with a bit size of 128 bits
-/// let (public_key, private_key) = key_gen(128);
-/// ```
 pub fn key_gen(bit_size: usize) -> (PublicKey, PrivateKey) {
 
     let (p, q) = generate_prime_pair(bit_size);

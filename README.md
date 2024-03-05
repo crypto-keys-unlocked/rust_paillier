@@ -74,7 +74,7 @@ For more details on the Paillier cryptosystem and its homomorphic properties, yo
 Contributions to improve this implementation or extend its functionality are welcome. Please ensure that your code adheres to the existing coding standards and includes tests covering new features.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
 ## Contact
 For any queries or collaboration, please open an issue in the repository or contact the maintainers directly.
