@@ -50,3 +50,43 @@ mod tests {
         assert_eq!(message, decrypted_message, "Decryption did not match the original message.");
     }
 }
+#[cfg(test)]
+mod homomorphic_tests {
+    use super::*;
+    use num_bigint::BigUint;
+
+    #[test]
+    fn test_homomorphic_addition() {
+        let bit_size = 512;
+        let (public_key, private_key) = keygen::key_gen(bit_size);
+
+        let m1 = BigUint::from(123u32);
+        let m2 = BigUint::from(456u32);
+        let expected_sum = &m1 + &m2;
+
+        let c1 = encryption::encryption(m1, &public_key);
+        let c2 = encryption::encryption(m2, &public_key);
+        let encrypted_sum = (&c1 * &c2) % public_key.n.pow(2u32);
+
+        let decrypted_sum = decryption::decryption(encrypted_sum, &public_key, &private_key);
+
+        assert_eq!(expected_sum, decrypted_sum, "Homomorphic addition did not match the expected sum.");
+    }
+
+    #[test]
+    fn test_homomorphic_multiplication() {
+        let bit_size = 512;
+        let (public_key, private_key) = keygen::key_gen(bit_size);
+
+        let m1 = BigUint::from(123u32);
+        let m2 = BigUint::from(3u32);
+        let expected_product = &m1 * &m2;
+
+        let c1 = encryption::encryption(m1, &public_key);
+        let encrypted_product = c1.modpow(&m2, &public_key.n.pow(2u32));
+
+        let decrypted_product = decryption::decryption(encrypted_product, &public_key, &private_key);
+
+        assert_eq!(expected_product, decrypted_product, "Homomorphic multiplication did not match the expected product.");
+    }
+}
