@@ -1,4 +1,4 @@
-# rust_paillier (Paillier Cryptosystem Implementation in Rust)
+# safe_paillier_rust (Paillier Cryptosystem Implementation in Rust)
 
 ## Overview
 This project is a Rust implementation of the Paillier cryptosystem, a probabilistic asymmetric algorithm for public key cryptography. The Paillier cryptosystem is known for its homomorphic properties, which allow for computations on ciphertexts that, when decrypted, match the result of operations as if they were carried out on the plaintexts.
@@ -32,8 +32,8 @@ Make sure you have Rust and Cargo installed on your machine. If you don't have t
 To start using this Paillier cryptosystem implementation, first, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/crypto-keys-unlocked/rust_paillier.git
-cd rust_paillier
+git clone https://github.com/crypto-keys-unlocked/safe_paillier_rust.git
+cd safe_paillier_rust
 ```
 ### Compiling
 Compile the project using Cargo:
@@ -49,9 +49,9 @@ This will compile the project and create an executable in the target/release dir
 This example demonstrates key generation, encryption of a plaintext message, and decryption of the ciphertext:
 
 ```rust
-use rust_paillier::keygen::key_gen;
-use rust_paillier::encryption::encryption;
-use rust_paillier::decryption::decryption;
+use safe_paillier_rust::keygen::key_gen;
+use safe_paillier_rust::encryption::encryption;
+use safe_paillier_rust::decryption::decryption;
 use num_bigint::BigUint;
 
 fn main() {

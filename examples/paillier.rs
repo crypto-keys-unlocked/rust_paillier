@@ -1,9 +1,9 @@
 use num_bigint::BigUint;
 use std::time::Instant;
 
-use rust_paillier::keygen::key_gen;
-use rust_paillier::encryption::encryption;
-use rust_paillier::decryption::decryption;
+use safe_paillier_rust::keygen::key_gen;
+use safe_paillier_rust::encryption::encryption;
+use safe_paillier_rust::decryption::decryption;
 
 fn main() {
     let start = Instant::now();

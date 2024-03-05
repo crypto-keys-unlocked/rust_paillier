@@ -1,5 +1,5 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use rust_paillier::{encryption, keygen, decryption};
+use safe_paillier_rust::{encryption, keygen, decryption};
 use num_bigint::BigUint;
 
 fn paillier_encryption_benchmark(c: &mut Criterion) {
