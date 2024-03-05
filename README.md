@@ -1,4 +1,4 @@
-# safe_paillier_rust (Paillier Cryptosystem Implementation in Rust)
+# safe_paillier_rust
 
 ## Overview
 This project is a Rust implementation of the Paillier cryptosystem, a probabilistic asymmetric algorithm for public key cryptography. The Paillier cryptosystem is known for its homomorphic properties, which allow for computations on ciphertexts that, when decrypted, match the result of operations as if they were carried out on the plaintexts.
